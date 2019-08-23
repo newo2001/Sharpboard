@@ -2,6 +2,7 @@
 using System.Windows.Forms;
 using Sharpboard.Element;
 using Sharpboard.Command;
+using Sharpboard.Util;
 
 namespace Sharpboard.Forms {
 	public partial class FormElement : Form {
@@ -45,7 +46,7 @@ namespace Sharpboard.Forms {
 		}
 
 		private void buttonAddFade_Click(object sender, EventArgs e) {
-			(new FormEffectFade(Element, new CommandFade())).Show(this);
+			FormUtils.OpenForm(new FormEffectFade(Element, new CommandFade()), this);
 		}
 
 		private void buttonEditCommand_Click(object sender, EventArgs e) {
@@ -53,7 +54,7 @@ namespace Sharpboard.Forms {
 			if (id == Guid.Empty) return;
 
 			SBCommand command = Element.GetCommand(id);
-			command.GetForm(Element).Show(this);
+			FormUtils.OpenForm(command.GetForm(Element), this);
 		}
 
 		private void buttonRemoveCommand_Click(object sender, EventArgs e) {

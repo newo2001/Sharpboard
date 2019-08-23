@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 using Sharpboard.Effect;
+using Sharpboard.Util;
 
 namespace Sharpboard.Forms {
 	public partial class FormApplication : Form {
@@ -16,7 +17,7 @@ namespace Sharpboard.Forms {
 		}
 
 		private void buttonAddEffect_Click(object sender, EventArgs e) {
-			(new FormEffect(new SBEffect(Storyboard))).Show(this);
+			FormUtils.OpenForm(new FormEffect(new SBEffect(Storyboard)), this);
 		}
 
 		private void buttonEditEffect_Click(object sender, EventArgs e) {
@@ -24,7 +25,7 @@ namespace Sharpboard.Forms {
 			if (id == Guid.Empty) return;
 
 			SBEffect effect = Storyboard.GetEffect(id);
-			(new FormEffect(effect)).Show(this);
+			FormUtils.OpenForm(new FormEffect(effect), this);
 		}
 
 		private void buttonRemoveEffect_Click(object sender, EventArgs e) {
@@ -50,6 +51,7 @@ namespace Sharpboard.Forms {
 				}
 			}
 		}
+
 		private void OnEffectRemoved(SBEffect effect) {
 			foreach (DataGridViewRow row in containerEffects.Rows) {
 				if ((Guid) row.Cells["Id"].Value == effect.GetId()) {

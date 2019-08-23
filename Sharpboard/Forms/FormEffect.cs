@@ -2,6 +2,7 @@
 using System.Windows.Forms;
 using Sharpboard.Element;
 using Sharpboard.Effect;
+using Sharpboard.Util;
 
 namespace Sharpboard.Forms {
 	public partial class FormEffect : Form {
@@ -44,7 +45,7 @@ namespace Sharpboard.Forms {
 		}
 
 		private void buttonAddElement_Click(object sender, EventArgs e) {
-			(new FormElement(new SBElement(Effect))).Show(this);
+			FormUtils.OpenForm(new FormElement(new SBElement(Effect)), this);
 		}
 
 		private void buttonEditElement_Click(object sender, EventArgs e) {
@@ -52,7 +53,7 @@ namespace Sharpboard.Forms {
 			if (id == Guid.Empty) return;
 
 			SBElement element = Effect.GetElement(id);
-			(new FormElement(element)).Show(this);
+			FormUtils.OpenForm(new FormElement(element), this);
 		}
 
 		private void buttonRemoveElement_Click(object sender, EventArgs e) {
