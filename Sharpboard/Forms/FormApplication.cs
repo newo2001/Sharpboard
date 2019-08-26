@@ -40,6 +40,10 @@ namespace Sharpboard.Forms {
 			}
 		}
 
+		private void buttonExport_Click(object sender, EventArgs e) {
+			FormUtils.OpenForm(new FormExport(), this);
+		}
+
 		private void OnEffectAdded(SBEffect effect) {
 			containerEffects.Rows.Add(effect.GetId(), effect.Name);
 		}

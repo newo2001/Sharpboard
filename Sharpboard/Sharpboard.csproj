@@ -67,6 +67,12 @@
     <Compile Include="Forms\FormElement.Designer.cs">
       <DependentUpon>FormElement.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\FormExport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormExport.Designer.cs">
+      <DependentUpon>FormExport.cs</DependentUpon>
+    </Compile>
     <Compile Include="Sharpboard.cs" />
     <Compile Include="Forms\FormEffectFade.cs">
       <SubType>Form</SubType>
@@ -89,6 +95,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormElement.resx">
       <DependentUpon>FormElement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormExport.resx">
+      <DependentUpon>FormExport.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

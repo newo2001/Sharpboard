@@ -29,6 +29,7 @@
 			this.Effects = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.buttonEditEffect = new System.Windows.Forms.Button();
 			this.buttonRemoveEffect = new System.Windows.Forms.Button();
+			this.buttonExport = new System.Windows.Forms.Button();
 			((System.ComponentModel.ISupportInitialize)(this.containerEffects)).BeginInit();
 			this.SuspendLayout();
 			// 
@@ -99,11 +100,22 @@
 			this.buttonRemoveEffect.UseVisualStyleBackColor = true;
 			this.buttonRemoveEffect.Click += new System.EventHandler(this.buttonRemoveEffect_Click);
 			// 
+			// buttonExport
+			// 
+			this.buttonExport.Location = new System.Drawing.Point(697, 23);
+			this.buttonExport.Name = "buttonExport";
+			this.buttonExport.Size = new System.Drawing.Size(91, 34);
+			this.buttonExport.TabIndex = 15;
+			this.buttonExport.Text = "Export";
+			this.buttonExport.UseVisualStyleBackColor = true;
+			this.buttonExport.Click += new System.EventHandler(this.buttonExport_Click);
+			// 
 			// FormApplication
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(800, 450);
+			this.Controls.Add(this.buttonExport);
 			this.Controls.Add(this.buttonRemoveEffect);
 			this.Controls.Add(this.buttonEditEffect);
 			this.Controls.Add(this.containerEffects);
@@ -123,5 +135,6 @@
 		private System.Windows.Forms.Button buttonRemoveEffect;
 		private System.Windows.Forms.DataGridViewTextBoxColumn Id;
 		private System.Windows.Forms.DataGridViewTextBoxColumn Effects;
+		private System.Windows.Forms.Button buttonExport;
 	}
 }
